@@ -28,6 +28,26 @@ void printMarketStats()
     std::cout << "Market looks good" << std::endl;
 }
 
+void enterOffer()
+{
+    std::cout << "Mark an offer - enter the amount" << std::endl;
+}
+
+void enterBid()
+{
+     std::cout << "Make a bid - enter the amount" << std::endl;
+}
+
+void printWallet()
+{
+    std::cout << "Your wallet is empty. " << std::endl;
+}
+
+void gotonextTimeframe()
+{
+    std::cout << "Going to next time frame. " << std::endl;
+}
+
 int getUserOption()
 {
     int userOption;
@@ -53,19 +73,19 @@ void processUserOption(int userOption)
     }
     if (userOption == 3) // bad input
     {
-        std::cout << "Mark an offer - enter the amount" << std::endl;
+        enterOffer();
     }
     if (userOption == 4) // bad input
     {
-        std::cout << "Make a bid - enter the amount" << std::endl;
+        enterBid();
     }
     if (userOption == 5) // bad input
     {
-        std::cout << "Your wallet is empty. " << std::endl;
+        printWallet();
     }
     if (userOption == 6) // bad input
     {
-        std::cout << "Going to next time frame. " << std::endl;
+        gotonextTimeframe();
     }
     
 }
