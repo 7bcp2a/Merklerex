@@ -18,6 +18,16 @@ void printMenu()
     std::cout << "==================" << std::endl;
 }
 
+void printHelp()
+{
+    std::cout << "Help - your aim is to make money. Analyse the market and make bids and offers" << std::endl;
+}
+
+void printMarketStats()
+{
+    std::cout << "Market looks good" << std::endl;
+}
+
 int getUserOption()
 {
     int userOption;
@@ -35,11 +45,11 @@ void processUserOption(int userOption)
     }
     if (userOption == 1) // bad input
     {
-        std::cout << "Help - your aim is to make money. Analyse the market and make bids and offers" << std::endl;
+        printHelp();
     }
     if (userOption == 2) // bad input
     {
-        std::cout << "Market looks good" << std::endl;
+        printMarketStats();
     }
     if (userOption == 3) // bad input
     {
