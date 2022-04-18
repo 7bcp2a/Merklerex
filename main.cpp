@@ -183,7 +183,7 @@ int main()
 
     //std::cout << "The price is " << orders[1].price << std::endl;
 
-    for (OrderBookEntry order : orders)
+    for (OrderBookEntry& order : orders)
     {
         std::cout << "The price is " << order.price << std::endl;
     }
