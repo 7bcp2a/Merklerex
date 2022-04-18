@@ -181,7 +181,12 @@ int main()
                             OrderBookType::bid});
 
 
-    std::cout << "The price is " << orders[1].price << std::endl;
+    //std::cout << "The price is " << orders[1].price << std::endl;
+
+    for (OrderBookEntry order : orders)
+    {
+        std::cout << "The price is " << order.price << std::endl;
+    }
 
     return 0;
 }
