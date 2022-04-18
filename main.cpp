@@ -181,11 +181,21 @@ int main()
                             OrderBookType::bid});
 
 
-    //std::cout << "The price is " << orders[1].price << std::endl;
-
+    
+    //iterator style syntax
     for (OrderBookEntry& order : orders)
     {
         std::cout << "The price is " << order.price << std::endl;
+    }
+    //array style syntax
+    for (unsigned int i = 0; i < orders.size(); ++i)
+    {
+        std::cout << "The price is " << orders[i].price << std::endl;
+    }
+    //object style syntax
+     for (unsigned int i = 0; i < orders.size(); ++i)
+    {
+        std::cout << "The price is " << orders.at(i).price << std::endl;
     }
 
     return 0;
