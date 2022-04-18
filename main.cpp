@@ -7,6 +7,20 @@
  class OrderBookEntry
  {
      public:
+
+        OrderBookEntry( double _price,
+                        double _amount,
+                        std::string _timestamp,
+                        std::string _product,
+                        OrderBookType _orderType)
+        {
+            price = _price;
+            amount = _amount;
+            timestamp = _timestamp;
+            product = _product;
+            orderType = _orderType;
+        }
+
         double price;
         double amount;
         std::string timestamp;
@@ -145,13 +159,11 @@ int main()
     //     processUserOption(userOption);
     // }
 
-    OrderBookEntry order1;
-
-    order1.price = 10000;
-    order1.amount = 0.002;
-    order1.timestamp = "2020/03/17 17:01:24.884492";
-    order1.product = "BTC/USDT";
-    order1.orderType = OrderBookType::bid;
+    OrderBookEntry order1{  1000,
+                            0.02, 
+                            "2020/03/17 17:01:24.884492", 
+                            "BTC/USDT",
+                            OrderBookType::bid};
 
     std::cout << "The price is " << order1.price << std::endl;
 
