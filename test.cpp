@@ -47,10 +47,16 @@ int main()
 
     //instantiate ifstream object and pass it the name of the file to its constructor to open the file
     std::ifstream csvFile{"OrderBookDataset.csv"};
+    std::string line;
 
     if (csvFile.is_open())
     {
         std::cout << "File open" << std::endl;
+
+        while(std::getline(csvFile, line))
+        {
+            std::cout << "Read line " << line << std::endl;
+        }
         csvFile.close();
     }
     else
