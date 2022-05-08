@@ -48,6 +48,7 @@ int main()
     //instantiate ifstream object and pass it the name of the file to its constructor to open the file
     std::ifstream csvFile{"OrderBookDataset.csv"};
     std::string line;
+    std::vector<std::string> tokens;
 
     if (csvFile.is_open())
     {
@@ -56,6 +57,18 @@ int main()
         while(std::getline(csvFile, line))
         {
             std::cout << "Read line " << line << std::endl;
+            tokens = tokenise(line, ',');
+            if (tokens.size() != 5) //bad
+            {
+                std::cout << "Bad line" << std::endl;
+                continue;
+            }
+            // we have 5 tokens
+            double price = std::stod(tokens[3]);
+            double amount = std::stod(tokens[4]);
+            std::cout << price << ":" << amount << std::endl;
+
+            
         }
         csvFile.close();
     }
