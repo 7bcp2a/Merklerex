@@ -1,2 +1,2 @@
 # Merklerex
-C++ uni project 
+C++ uni project, cryptocurrency exchange
