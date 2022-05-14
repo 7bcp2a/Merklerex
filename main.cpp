@@ -8,9 +8,9 @@
 
  int main()
  {
-     //MerkelMain app{};
-     //app.init();
-     CSVReader reader;
+    //MerkelMain app{};
+    //app.init();
+    CSVReader::readCSV("OrderBookDataset.csv");
  }
 
    
