@@ -46,12 +46,14 @@ void MerkelMain::printHelp()
 
 void MerkelMain::printMarketStats()
 {
-    for (std::string const p : OrderBook.getKnownProducts())
+    for (std::string const& p : orderBook.getKnownProducts())
     {
         std::cout << "Product: " << p << std::endl;
-        std::vector<OrderBookEntry> entries = OrderBook.getOrders(OrderBookType::ask, 
+        std::vector<OrderBookEntry> entries = orderBook.getOrders(OrderBookType::ask, 
                                                                 p, "2020/03/17 17:01:24.884492");
-        std::cout << "Asks seen: " << entries.size() << std::endl;                                   
+        std::cout << "Asks seen: " << entries.size() << std::endl;    
+        std::cout << "Max ask: " << OrderBook::getHighPrice(entries) << std::endl;      
+        std::cout << "Min ask: " << OrderBook::getLowPrice(entries) << std::endl;                           
     }
     // std::cout << "OrderBook contains : " << orders.size() << " entries" << std::endl;
     // unsigned int bids = 0;
