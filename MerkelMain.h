@@ -21,6 +21,7 @@ class MerkelMain
         int getUserOption();
         void processUserOption(int userOption);
 
+        std::string currentTime;
+
         OrderBook orderBook{"OrderBookDataset.csv"};
-        std::vector<OrderBookEntry> orders;
 };
