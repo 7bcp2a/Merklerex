@@ -80,8 +80,23 @@ void MerkelMain::enterAsk()
     std::cout << "Make an ask - enter the amount: product, price, amount eg ETH/BTC,200,0.5" << std::endl;
     std::string input;
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-
     std::getline(std::cin, input);
+
+    std::vector<std::string> tokens = CSVReader::tokenise(input, ',');
+    if (tokens.size() != 3)
+    {
+        std::cout << "Bad input! " << input << std::endl;
+    }
+    else {
+        OrderBookEntry obe = CSVReader::stringsToOBE(
+            tokens[1],
+            tokens[2],
+            currentTime,
+            tokens[0],
+            OrderBookType::ask
+        );
+    }
+
     std::cout << "You typed: " << input << std::endl;
 }
 
