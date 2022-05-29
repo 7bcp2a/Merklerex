@@ -123,8 +123,9 @@ for (OrderBookEntry& ask : asks)
         //if bid.price >= ask.price # we have a match
         if (bid.price >= ask.price)
         {
-            //sale = new ored()
+            //sale = new order()
             //sale.price = ask.price
+            //generate the sale
             OrderBookEntry sale{ask.price, 0, timestamp, product, OrderBookType::sale};
             // #now work out how much was sold and
             // #create new bids and asks covering
