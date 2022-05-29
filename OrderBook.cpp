@@ -2,6 +2,8 @@
 #include "CSVReader.h"
 #include <map>
 #include <algorithm>
+#include <numeric>
+
 /** construct, reading a csv data file*/
 OrderBook::OrderBook(std::string filename)
 {
@@ -62,6 +64,17 @@ double OrderBook::getLowPrice(std::vector<OrderBookEntry>& orders)
         if (e.price < min )min = e.price;
     }
     return min;
+}
+
+double OrderBook::getMeanPrice(std::vector<OrderBookEntry>& orders)
+{
+    
+    double sum = 0;
+    for (OrderBookEntry& e : orders)
+    {
+        sum += e.price;
+    }
+   return sum/orders.size();
 }
 
 std::string OrderBook::getEarliestTime()
