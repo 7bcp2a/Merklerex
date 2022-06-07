@@ -66,6 +66,7 @@ double OrderBook::getLowPrice(std::vector<OrderBookEntry>& orders)
     return min;
 }
 
+//f​unction calculating price mean 
 double OrderBook::getMeanPrice(std::vector<OrderBookEntry>& orders)
 {
     
