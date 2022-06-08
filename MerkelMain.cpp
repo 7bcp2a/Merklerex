@@ -133,7 +133,7 @@ void MerkelMain::enterBid()
                 tokens[2],
                 currentTime,
                 tokens[0],
-                OrderBookType::ask
+                OrderBookType::bid
             );
             orderBook.insertOrder(obe);
         }catch (const std::exception& e)
@@ -147,7 +147,6 @@ void MerkelMain::enterBid()
 
 void MerkelMain::printWallet()
 {
-    std::cout << "Your wallet is empty. " << std::endl;
     std::cout << wallet.toString() << std::endl;
 }
 
