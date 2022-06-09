@@ -136,7 +136,14 @@ void MerkelMain::enterBid()
                 tokens[0],
                 OrderBookType::bid
             );
-            orderBook.insertOrder(obe);
+            if (wallet.canFulfillOrder(obe))
+            {
+                std::cout << "Wallet looks good " << std::endl;
+                orderBook.insertOrder(obe);
+            }
+            else{
+                std::cout << "Wallet has insufficient funds " << std::endl;
+            }
         }catch (const std::exception& e)
         {
             std::cout << "MerkelMain::enterBid Bad input " << std::endl;
