@@ -17,6 +17,7 @@ void MerkelMain::init()
     
     wallet.insertCurrency("BTC", 10);
 
+    while(true)
     {
         printMenu();
         input = getUserOption();
